@@ -27,7 +27,7 @@
            
     function buildAmoebas(myJson){
         
-        var $body = document.getElementsByTagName('body');
+        var xmlns = "http://www.w3.org/2000/svg";
         var fragment = document.createDocumentFragment();
         var bgWrapper = document.createElement('div');
 
@@ -37,18 +37,16 @@
 
                 var div = document.createElement('div');
                 div.setAttribute('class', 'amoeba');
-                
-                var svg = document.createElement('svg');
+                            
+                var svg = document.createElementNS (xmlns, 'svg');
                 svg.setAttribute('viewbox', myJson[i].viewbox);
 
-                var path = document.createElement('path');
+                var path = document.createElementNS (xmlns, "path");
                 path.setAttribute('d', myJson[i].path);
-
+            
                 svg.appendChild(path);
                 div.appendChild(svg);
-            
                 bgWrapper.appendChild(div);   
-            
         }
         
         fragment.appendChild(bgWrapper);
