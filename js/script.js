@@ -1,3 +1,14 @@
+/* *************************************************
+
+    SVG FLOATING AMOEABAS BACKGROUND
+
+    Version:    1.0
+    Client:     Ginger Strategic Research
+    Author:     Paulo Pamplona (www.paulopamplona.com)
+    Date:       09/2018
+
+**************************************************** */
+
 (function(){
     'use strict';
     

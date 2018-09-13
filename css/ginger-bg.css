@@ -48,7 +48,6 @@
     .amoeba {
         position: fixed;
         z-index: 0;
-        1background: rgba(0,0,255,0.4);
     }
     
     .amoeba > svg > path {
