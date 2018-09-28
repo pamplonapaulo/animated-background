@@ -17,17 +17,12 @@
 @media only screen and (min-width: 1024px) {
     
     :root {
-/*        --lighter: #ce5145;*/
-        --lighter: #9f2100;
-        --darker: #9f2100;
-    /*
-        --lighter: cmyk(16%, 67%, 72%, 4.5%);
-        --darker: cmyk(24%, 84%, 100%, 18%);
-    */
+        --lighter: #CC6849;
+        --darker: #A93C18;
     }
         
     body {
-        background-image: linear-gradient(to right, #5c1d0d , #e64316);
+        background-image: linear-gradient(to right, #5C1E0D , #E64216);
         background-repeat: no-repeat;
         background-size: cover;
         background-position:center;
@@ -56,19 +51,18 @@
     }
 
     .amoeba:nth-child(1) {
-        width: 1900px;
-        height: 1900px;
-        transform: translate(-600px, -900px);
-        animation: amoeba1 linear 52s;
-        animation-iteration-count: 1;        
+        width: 1300px;
+        height: 1300px;
+        transform: translate(-100px, -500px);
+        animation: amoeba1 linear 100s infinite;
     }
 
     .amoeba:nth-child(1) > svg {
         will-change: transform;
         width: 100%;
         height: 100%;
-        animation: spin linear 25s;
-        animation-iteration-count: 1;
+        animation: spin 20s infinite linear;
+        overflow: visible;
     }
 
     .amoeba:nth-child(1) > svg > path {
@@ -76,9 +70,8 @@
         stroke: var(--darker);
         stroke-width: 3px;
         transform: translate(15%, -10%);
-        opacity: 0;
-        animation: fadeOut 5s;
-        animation-iteration-count: 1;
+        
+        opacity: 1;
     }
 
     .amoeba:nth-child(2) {
@@ -87,14 +80,14 @@
         right: -320px;
         width: 1300px;
         height: 1300px;
-        animation: amoeba2 linear 150s infinite;
+        animation: amoeba2 linear 200s infinite;
     }
 
     .amoeba:nth-child(2) > svg {
         will-change: transform;
         width: 100%;
         height: 100%;
-        animation: spin 20s infinite linear;
+        animation: spin 40s infinite linear;
     }
 
     .amoeba:nth-child(2) > svg > path {
@@ -112,8 +105,7 @@
         will-change: transform;
         width: 800px;
         height: 800px;
-        animation: spin 10s linear reverse;
-        animation-iteration-count: 1;
+        animation: spin 10s infinite linear reverse;
     }        
 
     .amoeba:nth-child(3) > svg > path {
@@ -121,9 +113,8 @@
         stroke: var(--darker);
         stroke-width: 2px;
         transform: translate(25%, 25%);
-        opacity: 0;
-        animation: fadeOut 8s;
-        animation-iteration-count: 1;
+        
+        opacity: 1;
     }
 
     .amoeba:nth-child(4) {
@@ -153,19 +144,20 @@
         transform: translate(-500px, -700px);
         left: -350px;
         top: 150px;
-        animation: amoeba5 linear 150s infinite;            
+        animation: amoeba5 115s infinite linear;   
     }
 
     .amoeba:nth-child(5) > svg {
         will-change: transform;
         width: 100%;
         height: 100%;
-        animation: spin linear reverse 18s infinite;
+        animation: spin 15s infinite linear reverse;
+        overflow: visible;        
     }
 
     .amoeba:nth-child(5) > svg > path {
         stroke: var(--lighter);
-        stroke-width: 2px;
+        stroke-width: 3px;
         transform: translate(25%, 25%); 
     }
 
@@ -244,13 +236,13 @@
         transform: rotate(9deg) translate(-440px, 510px);
         margin-left: -115px;
         bottom: -300px;
-        animation: amoeba9 90s;
-        animation-iteration-count: 1;
+        animation: amoeba9 90s infinite;
     }   
 
     .amoeba:nth-child(9) > svg {
         width: 1400px;
         height: 1400px;
+        animation: spin 10s linear infinite reverse;
     }
 
     .amoeba:nth-child(9) > svg > path {
@@ -258,9 +250,8 @@
         stroke: var(--darker);
         stroke-width: 3px;
         transform: translate(25%, 25%);
-        opacity: 0;
-        animation: fadeOut 8s;
-        animation-iteration-count: 1;
+        
+        opacity: 1;
     }
     
     
@@ -268,214 +259,91 @@
     /* * * * * * * * A N I M A T I O N S * * * * * * * */
     
     @keyframes fadeOut {
-        0%   {
-            opacity: 1;
-        }
-        100%   {
-            opacity: 0;
-        }
+        0%   {opacity: 1;}
+        100%   {opacity: 0;}
     }
 
     @keyframes spin {
-        0%   {
-            transform: rotate(0deg);
-        }
-        100%   {
-            transform: rotate(360deg);
-        }
+        0%   {transform: rotate(0deg);}
+        100%   {transform: rotate(360deg);}
     }
 
     @keyframes amoeba1 {
-        0%   {
-        }
-        30%   {                 
-            width: 900px;
-            height: 900px;
-        }
-        50%   {                 
-            width: 500px;
-            height: 500px;
-        }
-        95%   {                 
-            width: 900px;
-            height: 900px;
-        }
-        100%   {
-        }
+        0%   {}
+        30%, 95% {transform: scale(0.6) translate(-500px, -900px);}
+        50%   {transform: scale(0.4) rotate(-45deg) translate(1500px, 900px);}
+        100%   {}
     }
 
     @keyframes amoeba2 {
-        0%   {
-        }
-        10%   {                        
-            transform: scale(0.7);
-            transform-origin: left top;
-        }
-        20%   {                        
-            transform: scale(0.5) translate(-300px, 0px);
-            transform-origin: left bottom;
-        }
-        30%   {                        
-            transform: scale(0.6) translate(200px, -500px);;
-        }
-        40%   {                        
-            transform: scale(0.5) translate(-600px, -1300px);
-        }
-        50%   {                        
-            transform: scale(0.6);
-            transform-origin: center top;
-        }
-        60%   {                        
-            transform: scale(0.5,0.45);
-        }
-        70%   {                        
-            transform: scale(0.45, 0.6);
-        }
-        80%   {                        
-            transform: scale(0.7);
-        }
-        90%   {                        
-            transform: scale(0.8);
-        }
-        100%   {
-        }
+        0%   {}
+        10%   {transform: scale(0.7);transform-origin: left top;}
+        20%   {transform: scale(0.5) translate(-300px, 0px);transform-origin: left bottom;}
+        30%   {transform: scale(0.6) translate(200px, -500px);}
+        40%   {transform: scale(0.5) translate(-600px, -1300px);}
+        50%   {transform: scale(0.6);transform-origin: center top;}
+        60%   {transform: scale(0.5,0.45);}
+        70%   {transform: scale(0.45, 0.6);}
+        80%   {transform: scale(0.7);}
+        90%   {transform: scale(0.8);}
+        100%   {}
     }
     
     @keyframes amoeba4 {
-        0%   {
-        }
-        50%   {                        
-            transform: translate(-70vh, -25vh) scale(.7);
-        }
-        80%   {
-            transform: translate(60vh, -60vh) scale(.6);
-        }
-        100%   {
-        }
+        0%   {}
+        50%   {transform: translate(-70vh, -25vh) scale(.7);}
+        80%   {transform: translate(60vh, -60vh) scale(.6);}
+        100%   {}
     }
 
     @keyframes amoeba5 {
-        0%   {
-            width: 1300px;
-            height: 1300px;
-        }
-        35%   {                 
-            width: 1000px;
-            height: 1000px;
-            transform: translate(300px, 10px);
-        }
-        50%   {                 
-            transform: translate(900px, -200px);
-            width: 800px;
-            height: 800px;
-        }
-        75%   {                 
-            transform: translate(50px, 35px);
-            width: 1000px;
-            height: 1000px;
-        }
-        95%   {                 
-            width: 1300px;
-            height: 1300px;
-            transform: translate(20px, -510px);
-        }
-        100%   {
-            width: 1300px;
-            height: 1300px;
-        }
+        0%   {}
+        20%   {transform: translate(300px, 10px);}
+        40%   {transform: translate(900px, -200px) scale(.5);}
+        60%   {transform: translate(50px, 35px);}
+        80%   {transform: translate(20px, -510px);}
+        100%   {}
     }
     @keyframes amoeba6 {
-        0%   {
-        }
-        10%   {                        
-            transform: scale(0.35) translate(480px, 700px);
-        }
-        20%   {                        
-            transform: scale(0.5) translate(820px, 200px);
-        }
-        30%   {                        
-            transform: scale(0.35, 0.6) translate(1000px, 200px);;
-        }
-        40%   {                        
-            transform: scale(0.45) translate(-1980px, 700px);
-        }
-        50%   {                        
-            transform: scale(0.35) translate(-2200px, 1100px);
-        }
-        60%   {                        
-            transform: scale(0.4,0.45) translate(-500px, 120px);
-        }
-        70%   {                        
-            transform: scale(0.35, 0.3) translate(900px, 320px);
-        }
-        80%   {                        
-            transform: scale(0.5);
-        }
-        90%   {                        
-            transform: scale(0.6);
-        }
-        100%   {
-        }
+        0%   {}
+        10%   {transform: scale(0.35) translate(480px, 700px);}
+        20%   {transform: scale(0.5) translate(820px, 200px);}
+        30%   {transform: scale(0.35, 0.6) translate(1000px, 200px);;}
+        40%   {transform: scale(0.45) translate(-1980px, 700px)}
+        50%   {transform: scale(0.35) translate(-2200px, 1100px);}
+        60%   {transform: scale(0.4,0.45) translate(-500px, 120px);}
+        70%   {transform: scale(0.35, 0.3) translate(900px, 320px);}
+        80%   {transform: scale(0.5);}
+        90%   {transform: scale(0.6);}
+        100%   {}
     }
 
     @keyframes amoeba7 {
-        0%   {
-        }
-        10%   {                        
-            transform: scale(0.35) translate(210px, 720px);
-        }
-        20%   {                        
-            transform: scale(0.5) translate(-2510px, 120px);
-        }
-        30%   {                        
-            transform: scale(0.35) translate(-1000px, -700px);
-        }
-        40%   {                        
-            transform: scale(0.45) translate(800px, -320px);
-        }
-        50%   {                        
-            transform: scale(0.35) translate(-210px, 920px);
-        }
-        60%   {                        
-            transform: scale(0.4,0.45) translate(510px, 1100px);
-        }
-        70%   {                        
-            transform: scale(0.35, 0.3) translate(10px, -520px);
-        }
-        80%   {                        
-            transform: scale(0.5) translate(810px, 20px);
-        }
-        90%   {                        
-            transform: scale(0.6) translate(810px, 20px);
-        }
-        100%   {
-        }
+        0%   {}
+        10%   {transform: scale(0.35) translate(210px, 720px);}
+        20%   {transform: scale(0.5) translate(-2510px, 120px);}
+        30%   {transform: scale(0.35) translate(-1000px, -700px);}
+        40%   {transform: scale(0.45) translate(800px, -320px);}
+        50%   {transform: scale(0.35) translate(-210px, 920px);}
+        60%   {transform: scale(0.4,0.45) translate(510px, 1100px);}
+        70%   {transform: scale(0.35, 0.3) translate(10px, -520px);}
+        80%   {transform: scale(0.5) translate(810px, 20px);}
+        90%   {transform: scale(0.6) translate(810px, 20px);}
+        100%   {}
     }
 
     @keyframes amoeba8 {
-        0%   {
-        }
-        20%   {                        
-            transform: scale(0.3) translate(-950px, 350px);
-        }
-        35%   {                        
-            transform: scale(0.35) translate(-1250px, -850px);
-        }
-        80%   {                        
-            transform: scale(0.35) translate(1300px, 1450px);
-        }
-        100%   {
-        }
+        0%   {}
+        20%   {transform: scale(0.3) translate(-950px, 350px);}
+        35%   {transform: scale(0.35) translate(-1250px, -850px);}
+        80%   {transform: scale(0.35) translate(1300px, 1450px);}
+        100%   {}
     }
 
     @keyframes amoeba9 {
-        0%   {
-        }
-        50%   {                        
-            transform: translate(-80vh, 280vh);
-        }
-        100%   {
-        }
+        0%   {}
+        50%   {transform: translate(-80vh, 280vh);}
+        100%   {}
     }
 
     /* "INTERNET EXPLORER"  */
@@ -503,6 +371,3 @@
     }
     
 }
-
-
-
